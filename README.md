@@ -1,6 +1,7 @@
 ## Backend Documentation
 
 - To create tables and establish relationships, I utilized Laravel Migrations.
+- I used Seeders to insert default values for Offers, and Vendors 
 - I used Eloquent to directly interact with the database.
 - To segregate logic and model persistence, I employed the Repository Pattern.
 - For validating entry points, I utilized Requests.

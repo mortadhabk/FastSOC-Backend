@@ -12,17 +12,24 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'customer_id',
+        'offer_id',
+        'licenses',
+        'description',
+    ];
 
+    
     // an order belongs to a customer
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
-    // an order can have many vendor
-    public function vendors(): HasMany
+    // an order belongs to many vendor
+    public function vendors()
     {
-        return $this->hasMany(Vendor::class);
+        return $this->belongsToMany(Vendor::class)->withTimestamps();
     }
 
     // an order can have one offer

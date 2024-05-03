@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Offer extends Model
 {
-
-
-
     use HasFactory;
-
 
     // an offer belongs to an order
     public function order(): BelongsTo

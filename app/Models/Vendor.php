@@ -12,8 +12,8 @@ class Vendor extends Model
 
 
     // a vendor belongs to an order
-    public function order(): BelongsTo
+    public function orders()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsToMany(Order::class)->withTimestamps();
     }
 }
