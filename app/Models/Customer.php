@@ -10,7 +10,11 @@ class Customer extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'siret', 
+        'siren',
+        'legal_name',
+    ];
 
     // a customer can have many orders
     public function offers(): HasMany
