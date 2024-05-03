@@ -6,7 +6,6 @@ use App\Classes\ApiResponseClass;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Resources\OrderResource;
 use App\Interfaces\OrderRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
@@ -47,7 +46,7 @@ class OrderController extends Controller
             if (!empty($vendorIds)) {
                 $order->vendors()->attach($vendorIds);
             }
-            
+
             DB::commit();
             return ApiResponseClass::sendResponse(new OrderResource($order), 'Order Created Successfully', 201);
         } catch (\Exception $ex) {

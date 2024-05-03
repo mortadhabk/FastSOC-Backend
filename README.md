@@ -10,7 +10,8 @@
 
 ## API Documentation
 
-    To test Our Api, you can use Postman and copy/paste this code : 
+To test my API, you can use Postman and copy/paste this code:
+
 
 - [Get Customers] : Method Get http://fastsoc-backend.test/api .
 - [Add Customers] : Method Post http://fastsoc-backend.test/api/customers, body :  
@@ -32,4 +33,15 @@
 - [delete Customer] : Method delete http://fastsoc-backend.test/api/customers/{id} 
 
 
+- [Get Orders] : Method Get http://fastsoc-backend.test/api/orders .
 
+- [Add Orders] : Method Post http://fastsoc-backend.test/api/orders . body : 
+{
+            "customer_id": 1,
+            "vendor_id": [1,2],
+            "offer_id": 1,
+            "licenses" : 4, 
+            "description" : "test2"
+}
+
+- [Search the Name of the customer] : Method Get http://fastsoc-backend.test/api/client/{siren} | example  : http://fastsoc-backend.test/api/client/380542035: 
