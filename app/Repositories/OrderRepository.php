@@ -30,4 +30,17 @@ class OrderRepository implements OrderRepositoryInterface
     {
         return Order::create($data);
     }
+
+
+    /**
+     * Delete a customer.
+     *
+     * @param int $id
+     * @return mixed
+     */
+    public function delete($id)
+    {
+        Order::destroy($id);
+    }
+    
 }

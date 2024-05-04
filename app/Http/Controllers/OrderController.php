@@ -57,4 +57,14 @@ class OrderController extends Controller
             return ApiResponseClass::rollback($ex);
         }
     }
+
+    /**
+     * Remove a customer.
+     */
+    public function destroy($id)
+    {
+        $this->orderRepositoryInterface->delete($id);
+        return ApiResponseClass::sendResponse('', 'Order Delete Successful', 204);
+    }
+
 }
