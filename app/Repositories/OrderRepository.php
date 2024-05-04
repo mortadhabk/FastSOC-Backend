@@ -16,10 +16,10 @@ class OrderRepository implements OrderRepositoryInterface
      */
     public function index()
     {
-        return Order::all();
+        return Order::with(['customer', 'offer', 'vendors'])->get();
     }
-    
-    
+
+
     /**
      * Store a new Order.
      *

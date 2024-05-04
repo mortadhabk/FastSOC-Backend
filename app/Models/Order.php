@@ -19,7 +19,7 @@ class Order extends Model
         'description',
     ];
 
-    
+
     // an order belongs to a customer
     public function customer(): BelongsTo
     {
@@ -33,8 +33,8 @@ class Order extends Model
     }
 
     // an order can have one offer
-    public function offer(): HasOne
+    public function offer(): BelongsTo
     {
-        return $this->hasOne(Offer::class);
+        return $this->belongsTo(Offer::class);
     }
 }

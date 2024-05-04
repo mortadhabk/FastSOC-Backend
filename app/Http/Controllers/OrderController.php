@@ -7,6 +7,7 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Resources\OrderResource;
 use App\Interfaces\OrderRepositoryInterface;
 use Illuminate\Support\Facades\DB;
+
 class OrderController extends Controller
 {
     private OrderRepositoryInterface $orderRepositoryInterface;
@@ -17,7 +18,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display orders.
      */
     public function index()
     {
@@ -26,10 +27,13 @@ class OrderController extends Controller
         return ApiResponseClass::sendResponse(OrderResource::collection($data), '', 200);
     }
 
+    /**
+     * Create a new order.
+     */
     public function store(StoreOrderRequest $request)
     {
         // Get an array even if no IDs are provided
-        $vendorIds = $request->input('vendor_id', []); 
+        $vendorIds = $request->input('vendor_id', []);
 
         $orderDetails = [
             'customer_id' => $request->customer_id,
@@ -37,7 +41,7 @@ class OrderController extends Controller
             'licenses' => $request->licenses,
             'description' => $request->description,
         ];
-    
+
         DB::beginTransaction();
         try {
             $order = $this->orderRepositoryInterface->store($orderDetails);
@@ -53,5 +57,4 @@ class OrderController extends Controller
             return ApiResponseClass::rollback($ex);
         }
     }
-    
 }

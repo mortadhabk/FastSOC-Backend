@@ -23,7 +23,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display customers.
      */
     public function index()
     {
@@ -33,7 +33,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new customer.
      */
     public function store(StoreCustomerRequest $request)
     {
@@ -54,7 +54,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display a customer.
      */
     public function show($id)
     {
@@ -64,7 +64,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update a customer.
      */
     public function update(UpdateCustomerRequest $request, $id)
     {
@@ -85,7 +85,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove a customer.
      */
     public function destroy($id)
     {
@@ -95,7 +95,7 @@ class CustomerController extends Controller
 
 
     /**
-     * Search Name of the customer by Siren or Siret.
+     * Search Name of the customer by Siren.
      */
     public function searchBySiren($siren)
     {

@@ -16,8 +16,9 @@ class OrderResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'customer_id' => $this->customer_id,
-            'offer_id' => $this->offer_id,
+            'customer' => new CustomerResource($this->customer), 
+            'offer' => new OfferResource($this->offer), 
+            'vendors' => VendorResource::collection($this->vendors), 
             'licenses' => $this->licenses,
             'description' => $this->description,
             'created_at' => $this->created_at,

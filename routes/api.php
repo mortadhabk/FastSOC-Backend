@@ -15,3 +15,4 @@ Route::apiResource('/orders',OrderController::class);
 
 // Search by Siren or Siret Route
 Route::get('/client/{sirenOrSiret}', [CustomerController::class, 'searchBySiren']);
+
