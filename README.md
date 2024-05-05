@@ -1,3 +1,7 @@
+## Logical data model for this project 
+
+![image info](./mld.png)
+
 ## Backend Documentation
 
 - To create tables and establish relationships, I utilized Laravel Migrations.
@@ -57,4 +61,4 @@ To test my API, you can use Postman and copy/paste this code:
             "description" : "test2"
 }
 
-- [Search the Name of the customer] : Method Get http://fastsoc-backend.test/api/client/{siren} | example  : http://fastsoc-backend.test/api/client/380542035: 
+- [Search for the name of customer] : Method Get http://fastsoc-backend.test/api/client/{siren} | example  : http://fastsoc-backend.test/api/client/380542035: 
